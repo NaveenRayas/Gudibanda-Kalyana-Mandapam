@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register | Gudibanda Kalyana Mandapam</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <style>
+        .register-section {
+            min-height: 75vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+            background: #fffdf9;
+        }
+
+        .register-card {
+            width: 100%;
+            max-width: 480px;
+            padding: 40px;
+            background: white;
+            border: 1px solid #eee5d8;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .register-card h1 {
+            text-align: center;
+            color: #252525;
+            margin-bottom: 10px;
+            font-family: Georgia, serif;
+        }
+
+        .register-card p {
+            text-align: center;
+            color: #777;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #292722;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #d8d0c4;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .form-group input:focus {
+            border-color: #b88935;
+        }
+
+        .register-button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #b88935;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .register-button:hover {
+            background: #b17b24;
+        }
+
+        .login-link {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .login-link a {
+            color: #b17b24;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .message {
+            margin-bottom: 20px;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            background: #f7f3ec;
+            color: #292722;
+        }
+
+        @media (max-width: 600px) {
+            .register-card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            Gudibanda Kalyana Mandapam
+        </div>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/availability">Availability</a>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+        </nav>
+
+    </header>
+
+
+    <!-- REGISTER SECTION -->
+
+    <section class="register-section">
+
+        <div class="register-card">
+
+            <h1>Create Account</h1>
+
+            <p>
+                Register to check availability and manage your bookings.
+            </p>
+
+
+            <!-- Message area -->
+
+            <div class="message" id="message">
+                Create your account below.
+            </div>
+
+
+            <!-- REGISTER FORM -->
+
+            <form action="/register" method="POST">
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Create a password"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="register-button">
+                    CREATE ACCOUNT
+                </button>
+
+            </form>
+
+
+            <div class="login-link">
+
+                Already have an account?
+
+                <a href="/login">
+                    Login
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <p>
+            © 2026 Gudibanda Kalyana Mandapam. All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

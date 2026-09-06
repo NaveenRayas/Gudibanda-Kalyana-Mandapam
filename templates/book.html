@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book Date | Gudibanda Kalyana Mandapam</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <style>
+
+        .booking-section {
+            min-height: 75vh;
+            padding: 70px 20px;
+            background: #fffdf9;
+        }
+
+        .booking-container {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 45px;
+            border-radius: 18px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+        }
+
+        .booking-heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .booking-heading p {
+            color: #b88935;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .booking-heading h1 {
+            margin: 10px 0;
+            font-family: Georgia, serif;
+            color: #252525;
+        }
+
+        .booking-heading span {
+            color: #b88935;
+        }
+
+        .booking-heading .description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .selected-date {
+            background: #f7f3ec;
+            border-left: 4px solid #b88935;
+            padding: 15px 18px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+
+        .selected-date strong {
+            color: #252525;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #292722;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 15px;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #b88935;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .booking-button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background: #b88935;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .booking-button:hover {
+            background: #b17b24;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #b88935;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+
+            .booking-container {
+                padding: 25px;
+            }
+
+            .booking-section {
+                padding: 40px 15px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                ✦
+            </div>
+
+            <div>
+
+                <h2>Gudibanda</h2>
+
+                <p>Kalyana Mandapam</p>
+
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="/availability">
+                Availability
+            </a>
+
+            <a href="/login">
+                Login
+            </a>
+
+            <a href="/register" class="nav-button">
+                Register
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================
+         BOOKING SECTION
+    ========================== -->
+
+    <section class="booking-section">
+
+        <div class="booking-container">
+
+
+            <div class="booking-heading">
+
+                <p>
+                    RESERVE YOUR DATE
+                </p>
+
+                <h1>
+                    Book <span>Mandapam</span>
+                </h1>
+
+                <p class="description">
+                    Submit your booking request for
+                    Gudibanda Kalyana Mandapam.
+                </p>
+
+            </div>
+
+
+
+            <!-- SELECTED DATE -->
+
+            <div class="selected-date">
+
+                📅 Selected Date:
+
+                <strong>
+                    {{ booking_date }}
+                </strong>
+
+            </div>
+
+
+
+            <!-- BOOKING FORM -->
+
+            <form action="/book" method="POST">
+
+
+                <!-- DATE -->
+
+                <div class="form-group">
+
+                    <label for="booking_date">
+                        Booking Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="booking_date"
+                        name="booking_date"
+                        value="{{ booking_date }}"
+                        readonly>
+
+                </div>
+
+
+
+                <!-- EVENT TYPE -->
+
+                <div class="form-group">
+
+                    <label for="event_type">
+                        Event Type
+                    </label>
+
+                    <select
+                        id="event_type"
+                        name="event_type"
+                        required>
+
+                        <option value="">
+                            Select Event Type
+                        </option>
+
+                        <option value="Marriage">
+                            Marriage
+                        </option>
+
+                        <option value="Reception">
+                            Reception
+                        </option>
+
+                        <option value="Marriage & Reception">
+                            Marriage & Reception
+                        </option>
+
+                        <option value="Other">
+                            Other Event
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- NOTES -->
+
+                <div class="form-group">
+
+                    <label for="notes">
+                        Additional Notes
+                    </label>
+
+                    <textarea
+                        id="notes"
+                        name="notes"
+                        placeholder="Enter any additional information about your event..."></textarea>
+
+                </div>
+
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                    class="booking-button">
+
+                    SUBMIT BOOKING REQUEST →
+
+                </button>
+
+
+            </form>
+
+
+
+            <a
+                href="/availability"
+                class="back-link">
+
+                ← Back to Availability
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-logo">
+            Gudibanda Kalyana Mandapam
+        </div>
+
+        <p>
+            Gudibanda, Andhra Pradesh – 515271
+        </p>
+
+        <p class="footer-note">
+            Independent availability information portal
+        </p>
+
+        <p class="copyright">
+            © 2026 Gudibanda Kalyana Mandapam
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

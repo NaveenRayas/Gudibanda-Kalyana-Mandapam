@@ -1,0 +1,908 @@
+/* ==========================================
+   RESET
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================
+   BODY
+========================================== */
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    background: #f8f5f0;
+
+    color: #333;
+
+    min-height: 100vh;
+
+}
+
+
+/* ==========================================
+   NAVBAR
+========================================== */
+
+.navbar {
+
+    width: 100%;
+
+    background: #8b5e34;
+
+    color: white;
+
+    padding: 18px 6%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.12);
+
+}
+
+
+.nav-logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.logo-symbol {
+
+    font-size: 30px;
+
+}
+
+
+.nav-logo h2 {
+
+    font-size: 21px;
+
+    margin-bottom: 2px;
+
+}
+
+
+.nav-logo span {
+
+    font-size: 13px;
+
+    opacity: 0.9;
+
+}
+
+
+.nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+}
+
+
+.nav-links a {
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+
+}
+
+
+.nav-links a:hover {
+
+    opacity: 0.75;
+
+}
+
+
+.logout-btn {
+
+    padding: 9px 18px;
+
+    border: 1px solid rgba(255,255,255,0.7);
+
+    border-radius: 7px;
+
+}
+
+
+/* ==========================================
+   MAIN CONTAINER
+========================================== */
+
+.container {
+
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 45px 0 60px;
+
+}
+
+
+/* ==========================================
+   WELCOME SECTION
+========================================== */
+
+.welcome-section {
+
+    margin-bottom: 35px;
+
+}
+
+
+.small-title {
+
+    color: #8b5e34;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.welcome-section h1 {
+
+    font-size: 32px;
+
+    color: #4b301c;
+
+    margin-bottom: 10px;
+
+}
+
+
+.welcome-text {
+
+    color: #777;
+
+    font-size: 16px;
+
+}
+
+
+/* ==========================================
+   STAT CARDS
+========================================== */
+
+.stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.stat-card {
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.07);
+
+}
+
+
+.stat-icon {
+
+    width: 55px;
+
+    height: 55px;
+
+    background: #f3e9df;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 25px;
+
+}
+
+
+.stat-card h3 {
+
+    font-size: 26px;
+
+    color: #5d3b20;
+
+    margin-bottom: 4px;
+
+}
+
+
+.stat-card p {
+
+    color: #777;
+
+    font-size: 14px;
+
+}
+
+
+/* ==========================================
+   FLASH MESSAGES
+========================================== */
+
+.messages {
+
+    margin-bottom: 25px;
+
+}
+
+
+.message {
+
+    padding: 14px 18px;
+
+    border-radius: 8px;
+
+    margin-bottom: 10px;
+
+    font-weight: 600;
+
+}
+
+
+.message.success {
+
+    background: #e7f6e9;
+
+    color: #267333;
+
+    border-left: 5px solid #2e7d32;
+
+}
+
+
+.message.error {
+
+    background: #ffe9e9;
+
+    color: #c62828;
+
+    border-left: 5px solid #d32f2f;
+
+}
+
+
+/* ==========================================
+   ADMIN CARD
+========================================== */
+
+.admin-card {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    margin-bottom: 30px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.07);
+
+}
+
+
+/* ==========================================
+   SECTION HEADING
+========================================== */
+
+.section-heading {
+
+    margin-bottom: 25px;
+
+}
+
+
+.section-heading > div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+}
+
+
+.section-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    background: #f3e9df;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 22px;
+
+}
+
+
+.section-heading h2 {
+
+    color: #4b301c;
+
+    font-size: 21px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.section-heading p {
+
+    color: #888;
+
+    font-size: 14px;
+
+}
+
+
+/* ==========================================
+   BLOCK FORM
+========================================== */
+
+.block-form {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr auto;
+
+    gap: 18px;
+
+    align-items: end;
+
+}
+
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.form-group label {
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    color: #555;
+
+}
+
+
+.form-group input {
+
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.3s;
+
+}
+
+
+.form-group input:focus {
+
+    border-color: #8b5e34;
+
+    box-shadow:
+        0 0 0 3px rgba(139, 94, 52, 0.10);
+
+}
+
+
+/* ==========================================
+   BLOCK BUTTON
+========================================== */
+
+.block-btn {
+
+    padding: 13px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #8b5e34;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.block-btn:hover {
+
+    background: #6f4728;
+
+    transform: translateY(-1px);
+
+}
+
+
+/* ==========================================
+   TABLE
+========================================== */
+
+.table-container {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+}
+
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+
+thead {
+
+    background: #f5eee8;
+
+}
+
+
+th {
+
+    padding: 15px;
+
+    text-align: left;
+
+    color: #5d3b20;
+
+    font-size: 14px;
+
+}
+
+
+td {
+
+    padding: 15px;
+
+    border-bottom: 1px solid #eee;
+
+    color: #555;
+
+    font-size: 14px;
+
+}
+
+
+tbody tr:hover {
+
+    background: #fcfaf8;
+
+}
+
+
+td strong {
+
+    color: #4b301c;
+
+}
+
+
+.no-reason {
+
+    color: #999;
+
+    font-style: italic;
+
+}
+
+
+/* ==========================================
+   REMOVE BUTTON
+========================================== */
+
+.remove-btn {
+
+    border: none;
+
+    background: #ffe5e5;
+
+    color: #c62828;
+
+    padding: 8px 14px;
+
+    border-radius: 6px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.remove-btn:hover {
+
+    background: #ffcaca;
+
+}
+
+
+/* ==========================================
+   EMPTY STATE
+========================================== */
+
+.empty-state {
+
+    text-align: center;
+
+    padding: 45px 20px;
+
+}
+
+
+.empty-icon {
+
+    font-size: 45px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.empty-state h3 {
+
+    color: #555;
+
+    margin-bottom: 8px;
+
+}
+
+
+.empty-state p {
+
+    color: #999;
+
+}
+
+
+/* ==========================================
+   INFORMATION CARD
+========================================== */
+
+.info-card {
+
+    background: #fffaf5;
+
+    border: 1px solid #eadaca;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    gap: 20px;
+
+    align-items: flex-start;
+
+}
+
+
+.info-icon {
+
+    font-size: 35px;
+
+}
+
+
+.info-content h2 {
+
+    color: #5d3b20;
+
+    margin-bottom: 10px;
+
+}
+
+
+.info-content p {
+
+    color: #666;
+
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* ==========================================
+   TTD BUTTON
+========================================== */
+
+.ttd-btn {
+
+    display: inline-block;
+
+    padding: 12px 20px;
+
+    background: #8b5e34;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+
+}
+
+
+.ttd-btn:hover {
+
+    background: #6f4728;
+
+    transform: translateY(-1px);
+
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer {
+
+    background: #4b301c;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 35px 20px;
+
+}
+
+
+.footer-logo {
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+
+}
+
+
+footer p {
+
+    color: #ddd;
+
+    font-size: 13px;
+
+    margin: 6px 0;
+
+}
+
+
+footer .copyright {
+
+    margin-top: 18px;
+
+    color: #bbb;
+
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 800px) {
+
+    .navbar {
+
+        padding: 16px 4%;
+
+    }
+
+
+    .nav-links {
+
+        gap: 12px;
+
+    }
+
+
+    .stats {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .block-form {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .block-btn {
+
+        width: 100%;
+
+    }
+
+
+    .welcome-section h1 {
+
+        font-size: 27px;
+
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 500px) {
+
+    .navbar {
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+
+    }
+
+
+    .nav-links {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+    }
+
+
+    .container {
+
+        width: 94%;
+
+        padding-top: 30px;
+
+    }
+
+
+    .admin-card {
+
+        padding: 20px;
+
+    }
+
+
+    .welcome-section h1 {
+
+        font-size: 24px;
+
+    }
+
+
+    .info-card {
+
+        flex-direction: column;
+
+    }
+
+
+    th,
+    td {
+
+        padding: 11px;
+
+    }
+
+}

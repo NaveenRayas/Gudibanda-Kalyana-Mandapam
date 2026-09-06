@@ -1,0 +1,680 @@
+:root {
+    --dark: #252525;
+    --gold: #b88935;
+    --muted: #777;
+    --cream: #f7f3ec;
+    --border: #ddd;
+}
+
+
+/* ================================
+   AVAILABILITY HERO
+================================ */
+
+.availability-hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 30px;
+
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 70px;
+}
+
+
+/* ================================
+   HERO CONTENT
+================================ */
+
+.availability-content {
+    padding-right: 10px;
+}
+
+.availability-content .small-heading {
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.availability-content h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 60px;
+    line-height: 1.08;
+
+    margin: 0 0 25px;
+
+    color: var(--dark);
+}
+
+.availability-content h1 span {
+    color: var(--gold);
+    display: block;
+}
+
+
+/* ================================
+   DESCRIPTION
+================================ */
+
+.availability-description {
+    max-width: 520px;
+
+    font-size: 17px;
+    line-height: 1.8;
+
+    color: var(--muted);
+
+    margin: 0 0 22px;
+}
+
+
+/* ================================
+   LOCATION
+================================ */
+
+.location {
+    margin-top: 10px;
+    margin-bottom: 18px;
+
+    font-size: 15px;
+    color: var(--dark);
+}
+
+
+/* ================================
+   OFFICIAL TTD BOOKING
+================================ */
+
+.official-booking {
+    margin-top: 20px;
+
+    font-size: 15px;
+    line-height: 1.6;
+
+    color: var(--muted);
+}
+
+.official-booking a {
+    display: inline-block;
+
+    margin-left: 5px;
+
+    color: var(--gold);
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid var(--gold);
+
+    transition: 0.3s ease;
+}
+
+.official-booking a:hover {
+    color: var(--dark);
+
+    border-bottom-color: var(--dark);
+}
+
+
+/* ================================
+   KALYANAM IMAGE
+================================ */
+
+.availability-image {
+    height: 420px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.18);
+
+    border: 3px solid rgba(184, 137, 53, 0.25);
+
+    transition: 0.3s ease;
+}
+
+.availability-image:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 30px 70px rgba(0, 0, 0, 0.25);
+}
+
+.availability-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* ================================
+   CALENDAR SECTION
+================================ */
+
+.calendar-section {
+    background: var(--cream);
+
+    padding: 80px 30px;
+}
+
+.calendar-heading {
+    text-align: center;
+
+    margin-bottom: 40px;
+}
+
+.calendar-heading > p:first-child {
+    color: var(--gold);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.calendar-heading h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 42px;
+
+    margin: 12px 0;
+
+    color: var(--dark);
+}
+
+.calendar-heading h2 span {
+    color: var(--gold);
+}
+
+.calendar-info {
+    color: var(--muted);
+
+    font-size: 15px;
+}
+
+
+/* ================================
+   DATE FILTERS
+================================ */
+
+.date-filters {
+    max-width: 900px;
+
+    margin: 0 auto 40px;
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 16px;
+
+    display: flex;
+
+    align-items: end;
+
+    gap: 20px;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.06);
+}
+
+.filter-group {
+    flex: 1;
+}
+
+.filter-group label {
+    display: block;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 8px;
+
+    color: var(--dark);
+}
+
+.filter-group select {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    background: white;
+
+    font-size: 15px;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+.filter-group select:focus {
+    border-color: var(--gold);
+}
+
+
+/* ================================
+   CHECK BUTTON
+================================ */
+
+.check-button {
+    padding: 14px 24px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: var(--dark);
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    white-space: nowrap;
+}
+
+.check-button:hover {
+    background: var(--gold);
+
+    transform: translateY(-2px);
+}
+
+
+/* ================================
+   CALENDAR
+================================ */
+
+.calendar-container {
+    max-width: 900px;
+
+    margin: auto;
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    box-shadow:
+        0 15px 50px rgba(0, 0, 0, 0.07);
+}
+
+.calendar-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+.calendar-top h3 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 25px;
+
+    color: var(--dark);
+}
+
+.calendar-arrow {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    border: 1px solid var(--border);
+
+    background: white;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.calendar-arrow:hover {
+    background: var(--cream);
+
+    border-color: var(--gold);
+}
+
+
+/* ================================
+   WEEK DAYS
+================================ */
+
+.calendar-week {
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    text-align: center;
+
+    margin-bottom: 12px;
+}
+
+.calendar-week div {
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: var(--muted);
+
+    padding: 10px;
+}
+
+
+/* ================================
+   CALENDAR DATES
+================================ */
+
+.calendar-days {
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    gap: 8px;
+}
+
+.calendar-day {
+    min-height: 65px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+
+/* AVAILABLE */
+
+.calendar-day.available {
+    background: #edf8f0;
+
+    color: #287a42;
+
+    cursor: pointer;
+}
+
+.calendar-day.available:hover {
+    transform: translateY(-2px);
+}
+
+
+/* BOOKED */
+
+.calendar-day.booked {
+    background: #fceeee;
+
+    color: #b33a3a;
+
+    cursor: not-allowed;
+}
+
+
+/* PENDING */
+
+.calendar-day.pending {
+    background: #fff7df;
+
+    color: #9a761c;
+
+    cursor: not-allowed;
+}
+
+
+/* BLOCKED */
+
+.calendar-day.blocked {
+    background: #ff69b4;
+
+    color: white;
+
+    border: 1px solid #ff1493;
+}
+
+
+/* PAST DATES */
+
+.calendar-day.past {
+    background: #eeeeee;
+
+    color: #999999;
+
+    cursor: not-allowed;
+
+    opacity: 0.7;
+}
+
+.calendar-day.past:hover {
+    transform: none;
+}
+
+
+/* EMPTY */
+
+.calendar-day.empty {
+    cursor: default;
+
+    background: transparent;
+}
+
+
+/* ================================
+   CALENDAR MESSAGE
+================================ */
+
+.calendar-message {
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    padding: 70px 20px;
+
+    color: var(--muted);
+
+    font-size: 16px;
+}
+
+/* neww */
+
+.information-title {
+    margin-top: 25px;
+    margin-bottom: 8px;
+    color: var(--gold);
+    font-size: 24px;
+}
+
+.information-text {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* ================================
+   LEGEND
+================================ */
+
+.calendar-legend {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    flex-wrap: wrap;
+
+    margin-top: 35px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid var(--border);
+}
+
+.legend-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 13px;
+
+    color: var(--muted);
+}
+
+.legend-box {
+    width: 14px;
+    height: 14px;
+
+    border-radius: 4px;
+}
+
+.legend-box.available {
+    background: #d8f0df;
+}
+
+.legend-box.booked {
+    background: #f3cccc;
+}
+
+.legend-box.pending {
+    background: #f8e8ad;
+}
+
+.legend-box.blocked {
+    background: #ddd;
+}
+
+
+/* ================================
+   INFORMATION NOTE
+================================ */
+
+.availability-note {
+    max-width: 900px;
+
+    margin: 70px auto;
+
+    padding: 25px 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    background: white;
+}
+
+.note-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--cream);
+
+    color: var(--gold);
+
+    font-size: 20px;
+}
+
+.availability-note h3 {
+    margin-bottom: 5px;
+
+    color: var(--dark);
+}
+
+.availability-note p {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 800px) {
+
+    .availability-hero {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        padding: 50px 20px;
+    }
+
+    .availability-content h1 {
+        font-size: 48px;
+    }
+
+    .availability-image {
+        height: 350px;
+    }
+
+    .date-filters {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .calendar-container {
+        padding: 20px;
+    }
+
+    .calendar-day {
+        min-height: 50px;
+
+        font-size: 13px;
+    }
+
+    .calendar-legend {
+        gap: 15px;
+    }
+}

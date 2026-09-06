@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gudibanda Kalyana Mandapam</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header class="navbar">
+
+        <div class="logo">
+            <div class="logo-icon">✦</div>
+
+            <div>
+                <h2>Gudibanda</h2>
+                <p>Kalyana Mandapam</p>
+            </div>
+        </div>
+
+        <nav>
+    <a href="/" class="active">Home</a>
+
+    <a href="/availability">Availability</a>
+
+    <a href="/logout" class="logout-btn">Logout</a>
+</nav>
+
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <!-- LEFT SIDE -->
+        <div class="hero-content">
+
+            <p class="small-heading">
+                MARRIAGE • RECEPTION • SPECIAL EVENTS
+            </p>
+
+            <h1>
+                Celebrate Your
+                <span>Special Moments</span>
+            </h1>
+
+            <p class="description">
+                Find the perfect date for your wedding, reception,
+                or special occasion at Gudibanda Kalyana Mandapam.
+            </p>
+
+            <div class="location">
+                📍 Gudibanda, Andhra Pradesh – 515271
+            </div>
+
+            <div class="hero-buttons">
+
+                <a href="/availability" class="primary-button">
+                    CHECK AVAILABILITY →
+                </a>
+
+                <a href="#about" class="secondary-button">
+                    Explore More
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE IMAGE -->
+        <div class="hero-image-container">
+
+            <div class="image-decoration"></div>
+
+            <div class="image-card">
+
+                <img
+                    src="{{ url_for('static', filename='images/venkateswara.webp') }}"
+                    alt="Venkateswara Swamy and Devi">
+
+                <div class="image-caption">
+
+                    <div>
+                        <strong>Gudibanda</strong>
+
+                        <span>
+                            Kalyana Mandapam
+                        </span>
+                    </div>
+
+                    <span class="heart">♡</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+    <section class="features" id="about">
+
+        <div class="section-heading">
+
+            <p>PLAN WITH CONFIDENCE</p>
+
+            <h2>
+                Everything You Need,
+                <span>In One Place</span>
+            </h2>
+
+        </div>
+
+
+        <div class="feature-container">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    📅
+                </div>
+
+                <h3>Check Availability</h3>
+
+                <p>
+                    Select a year and month to easily check
+                    available and booked dates.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    💍
+                </div>
+
+                <h3>Plan Your Event</h3>
+
+                <p>
+                    Find a suitable date for your marriage,
+                    reception, or special celebration.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    ✨
+                </div>
+
+                <h3>Simple & Convenient</h3>
+
+                <p>
+                    A simple digital platform designed to
+                    make checking dates easier.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CALL TO ACTION -->
+    <section class="cta">
+
+        <div>
+
+            <p class="cta-small">
+                READY TO PLAN YOUR SPECIAL DAY?
+            </p>
+
+            <h2>
+                Find Your Perfect Date
+            </h2>
+
+        </div>
+
+        <a href="/availability" class="cta-button">
+            CHECK AVAILABILITY →
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-logo">
+            Gudibanda Kalyana Mandapam
+        </div>
+
+        <p>
+            Gudibanda, Andhra Pradesh – 515271
+        </p>
+
+        <p class="footer-note">
+            Independent availability information portal
+        </p>
+
+        <p class="copyright">
+            © 2026 Gudibanda Kalyana Mandapam
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

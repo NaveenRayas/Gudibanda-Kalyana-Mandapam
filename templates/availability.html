@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Check Availability | Gudibanda Kalyana Mandapam</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Availability CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/availability.css') }}">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+     NAVBAR
+========================== -->
+
+<header class="navbar">
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            ✦
+        </div>
+
+        <div>
+            <h2>Gudibanda</h2>
+            <p>Kalyana Mandapam</p>
+        </div>
+
+    </div>
+
+
+    <nav>
+
+        <a href="/">
+            Home
+        </a>
+
+        <a href="/availability" class="active">
+            Availability
+        </a>
+
+        <a href="/about">
+            About / Contact
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+    <!-- =========================
+         AVAILABILITY HERO
+    ========================== -->
+
+    <!-- =========================
+     AVAILABILITY HERO
+========================== -->
+
+<section class="availability-hero">
+
+    <!-- LEFT CONTENT -->
+    <div class="availability-content">
+
+        <p class="small-heading">
+            PLAN YOUR SPECIAL DAY
+        </p>
+
+        <h1>
+            Gudibanda
+            <span>Kalyana Mandapam</span>
+        </h1>
+
+        <p class="availability-description">
+    Welcome to Gudibanda Kalyana Mandapam.
+    Plan your special moments with ease and visit the official TTD website for booking.
+    "Your special moments deserve a special place".<br>
+
+    <h2 class="information-title">Information</h2>
+
+    <span class="information-text">
+        This website is an independent information portal and is not an official TTD website.
+    </span>
+</p>
+
+        <div class="location">
+            📍 Gudibanda, Andhra Pradesh – 515271
+        </div>
+
+        <p class="official-booking">
+            Visit the
+            <a href="https://tirupatibalaji.ap.gov.in/#/kmCal"
+               target="_blank"
+               rel="noopener noreferrer">
+                official TTD website
+            </a>
+            for booking.
+        </p>
+
+    </div>
+
+
+    <!-- RIGHT / MIDDLE IMAGE -->
+    <div class="availability-image">
+
+        <img
+            src="{{ url_for('static', filename='images/kalyanam.webp') }}"
+            alt="Srinivasa Padmavathi Kalyanam">
+
+    </div>
+
+</section>
+
+
+    <!-- =========================
+         CALENDAR SECTION
+    ========================== -->
+
+    <section class="calendar-section">
+
+        <div class="calendar-heading">
+
+            <p>
+                SELECT YOUR DATE
+            </p>
+
+            <h2>
+    Explore
+    <span>Calendar</span>
+</h2>
+
+            <p class="calendar-info">
+
+                Choose a year and month to plan your event.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- =========================
+             YEAR / MONTH FILTER
+        ========================== -->
+
+        <div class="date-filters">
+
+            <div class="filter-group">
+
+                <label for="year">
+                    Year
+                </label>
+
+                <select id="year">
+
+                    <option value="">
+                        Select Year
+                    </option>
+
+                    <option value="2026">
+                        2026
+                    </option>
+
+                    <option value="2027">
+                        2027
+                    </option>
+
+                    <option value="2028">
+                        2028
+                    </option>
+
+                    <option value="2029">
+                        2029
+                    </option>
+
+                    <option value="2030">
+                        2030
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="filter-group">
+
+                <label for="month">
+                    Month
+                </label>
+
+                <select id="month">
+
+                    <option value="">
+                        Select Month
+                    </option>
+
+                    <option value="0">
+                        January
+                    </option>
+
+                    <option value="1">
+                        February
+                    </option>
+
+                    <option value="2">
+                        March
+                    </option>
+
+                    <option value="3">
+                        April
+                    </option>
+
+                    <option value="4">
+                        May
+                    </option>
+
+                    <option value="5">
+                        June
+                    </option>
+
+                    <option value="6">
+                        July
+                    </option>
+
+                    <option value="7">
+                        August
+                    </option>
+
+                    <option value="8">
+                        September
+                    </option>
+
+                    <option value="9">
+                        October
+                    </option>
+
+                    <option value="10">
+                        November
+                    </option>
+
+                    <option value="11">
+                        December
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="check-button"
+                onclick="showCalendar()">
+
+                CHECK DATES →
+
+            </button>
+
+        </div>
+
+
+
+        <!-- =========================
+             CALENDAR
+        ========================== -->
+
+        <div class="calendar-container">
+
+            <div class="calendar-top">
+
+                <button
+                    type="button"
+                    class="calendar-arrow"
+                    onclick="previousMonth()">
+
+                    ‹
+
+                </button>
+
+
+                <h3 id="calendar-title">
+                    Select Year & Month
+                </h3>
+
+
+                <button
+                    type="button"
+                    class="calendar-arrow"
+                    onclick="nextMonth()">
+
+                    ›
+
+                </button>
+
+            </div>
+
+
+
+            <!-- WEEK DAYS -->
+
+            <div class="calendar-week">
+
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+
+            </div>
+
+
+
+            <!-- CALENDAR DAYS -->
+
+            <div
+                id="calendar-days"
+                class="calendar-days">
+
+                <div class="calendar-message">
+
+                    Select a year and month
+                    to view the calendar.
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 LEGEND
+            ========================== -->
+
+            <div class="calendar-legend">
+
+                <div class="legend-item">
+
+                    <span class="legend-box available">
+                    </span>
+
+                    Available
+
+                </div>
+
+
+                <div class="legend-item">
+
+                    <span class="legend-box booked">
+                    </span>
+
+                    Booked
+
+                </div>
+
+
+                <div class="legend-item">
+
+                    <span class="legend-box pending">
+                    </span>
+
+                    Pending
+
+                </div>
+
+
+                <div class="legend-item">
+
+                    <span class="legend-box blocked">
+                    </span>
+
+                    Blocked
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         INFORMATION
+    ========================== -->
+
+    <section class="availability-note">
+
+        <div class="note-icon">
+            ✦
+        </div>
+
+        <div>
+
+            <h3>
+                Planning a Wedding?
+            </h3>
+
+            <p>
+
+                Check the calendar first and choose
+                an available date for your marriage,
+                reception, or special event.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-logo">
+
+            Gudibanda Kalyana Mandapam
+
+        </div>
+
+        <p>
+
+            Gudibanda, Andhra Pradesh – 515271
+
+        </p>
+
+        <p class="footer-note">
+
+            Independent availability information portal
+
+        </p>
+
+        <p class="copyright">
+
+            © 2026 Gudibanda Kalyana Mandapam
+
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>

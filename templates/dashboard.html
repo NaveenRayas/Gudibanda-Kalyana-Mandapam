@@ -1,0 +1,342 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Gudibanda Kalyana Mandapam</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <style>
+
+        .dashboard {
+            min-height: 80vh;
+            padding: 70px 7%;
+            background: #fffdf9;
+        }
+
+        .welcome {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .welcome-small {
+            color: #b17b24;
+            font-size: 12px;
+            letter-spacing: 3px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .welcome h1 {
+            font-family: Georgia, serif;
+            font-size: 48px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .welcome h1 span {
+            color: #b17b24;
+            font-style: italic;
+        }
+
+        .welcome p {
+            color: #777;
+            font-size: 16px;
+        }
+
+        .dashboard-container {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .dashboard-card {
+            background: white;
+            padding: 35px 25px;
+            text-align: center;
+            border: 1px solid #eee5d7;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-7px);
+            box-shadow:
+                0 15px 35px rgba(0, 0, 0, 0.08);
+        }
+
+        .dashboard-icon {
+            width: 65px;
+            height: 65px;
+            margin: 0 auto 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #f4ead7;
+
+            font-size: 28px;
+        }
+
+        .dashboard-card h2 {
+            font-family: Georgia, serif;
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .dashboard-card p {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .dashboard-button {
+            display: inline-block;
+
+            padding: 12px 22px;
+
+            background: #252525;
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 5px;
+
+            font-size: 12px;
+            font-weight: bold;
+
+            letter-spacing: 1px;
+
+            transition: 0.3s;
+        }
+
+        .dashboard-button:hover {
+            background: #b17b24;
+        }
+
+        .logout-button {
+            background: transparent;
+            color: #b17b24;
+            border: 1px solid #b17b24;
+        }
+
+        .logout-button:hover {
+            background: #b17b24;
+            color: white;
+        }
+
+        @media (max-width: 850px) {
+
+            .dashboard-container {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+
+            .welcome h1 {
+                font-size: 38px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+    <div class="logo">
+
+        <div>
+
+            <h2>Gudibanda Kalyana Mandapam</h2>
+
+            <p>Gudibanda • Andhra Pradesh</p>
+
+        </div>
+
+    </div>
+
+
+    <nav>
+
+        <a href="/">Home</a>
+
+        <a href="/availability">
+            Availability
+        </a>
+
+        <a href="/logout">
+            Logout
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- DASHBOARD -->
+
+<section class="dashboard">
+
+
+    <div class="welcome">
+
+        <div class="welcome-small">
+            USER DASHBOARD
+        </div>
+
+        <h1>
+            Welcome,
+            <span>{{ session["user_name"] }}</span>!
+        </h1>
+
+        <p>
+            Manage your Gudibanda Kalyana Mandapam
+            booking from here.
+        </p>
+
+    </div>
+
+
+
+    <div class="dashboard-container">
+
+
+        <!-- AVAILABILITY -->
+
+        <div class="dashboard-card">
+
+            <div class="dashboard-icon">
+                📅
+            </div>
+
+            <h2>
+                Check Availability
+            </h2>
+
+            <p>
+                Check which dates are available
+                for marriages and receptions.
+            </p>
+
+            <a
+                href="/availability"
+                class="dashboard-button">
+
+                CHECK DATES
+
+            </a>
+
+        </div>
+
+
+
+        <!-- MY BOOKINGS -->
+
+        <div class="dashboard-card">
+
+            <div class="dashboard-icon">
+                💍
+            </div>
+
+            <h2>
+                My Bookings
+            </h2>
+
+            <p>
+                View your booking requests and
+                their current status.
+            </p>
+
+            <a
+                href="#"
+                class="dashboard-button">
+
+                MY BOOKINGS
+
+            </a>
+
+        </div>
+
+
+
+        <!-- ACCOUNT -->
+
+        <div class="dashboard-card">
+
+            <div class="dashboard-icon">
+                👤
+            </div>
+
+            <h2>
+                My Account
+            </h2>
+
+            <p>
+                You are logged in as
+                <strong>{{ session["user_name"] }}</strong>.
+            </p>
+
+            <a
+                href="/logout"
+                class="dashboard-button logout-button">
+
+                LOGOUT
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-logo">
+        Gudibanda Kalyana Mandapam
+    </div>
+
+    <p>
+        Marriage & Reception Hall
+    </p>
+
+    <p class="copyright">
+        © 2026 Gudibanda Kalyana Mandapam.
+        All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
+```
