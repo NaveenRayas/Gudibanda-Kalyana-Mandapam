@@ -905,3 +905,56 @@ footer {
     }
 
 }
+/* =========================
+   DATABASE STATUS
+========================= */
+
+.database-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 10px 17px;
+
+    background: #e8f7ee;
+    color: #198754;
+
+    border: 1px solid #b7e4c7;
+    border-radius: 25px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    margin-top: 20px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+
+    background: #198754;
+
+    border-radius: 50%;
+
+    display: inline-block;
+
+    box-shadow: 0 0 0 4px rgba(25, 135, 84, 0.12);
+}
+
+/* =========================
+   DATABASE DISCONNECTED
+========================= */
+
+.database-status.disconnected {
+    background: #fdecec;
+    color: #dc3545;
+    border-color: #f5c2c7;
+}
+
+.database-status.disconnected .status-dot {
+    background: #dc3545;
+
+    box-shadow: 0 0 0 4px rgba(220, 53, 69, 0.12);
+}

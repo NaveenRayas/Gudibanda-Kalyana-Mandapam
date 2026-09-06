@@ -1,8 +1,9 @@
+import os
+import tempfile
 from flask import Flask, render_template, request, redirect, session, flash
 import mysql.connector
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import date
-
 
 app = Flask(__name__)
 
@@ -13,17 +14,68 @@ app.secret_key = "gudibanda-secret-key"
 # DATABASE CONNECTION
 # ==========================================
 
-def get_db_connection():
+def get_ssl_ca_path():
+    """
+    Resolves the SSL CA certificate path for Aiven MySQL.
+    Supports:
+    1. Direct certificate content via AIVEN_CA_CERT (or AIVEN_SSL_CA containing PEM text).
+    2. Path configured via AIVEN_SSL_CA environment variable.
+    3. Render secret file path (/etc/secrets/ca.pem).
+    4. ca.pem located in the project root directory.
+    5. Local Windows development fallback (C:/Users/TECQNIO/Downloads/ca.pem).
+    """
+    cert_content = os.getenv("AIVEN_CA_CERT")
+    ssl_ca_env = os.getenv("AIVEN_SSL_CA")
 
+    # If AIVEN_SSL_CA contains the raw certificate text instead of a file path
+    if ssl_ca_env and "-----BEGIN CERTIFICATE-----" in ssl_ca_env:
+        cert_content = ssl_ca_env
+        ssl_ca_env = None
+
+    # If raw certificate text was provided, write to a temporary file
+    if cert_content:
+        ca_path = os.path.join(tempfile.gettempdir(), "aiven_ca.pem")
+        with open(ca_path, "w", encoding="utf-8") as f:
+            f.write(cert_content.strip())
+        return ca_path
+
+    # Check path provided via AIVEN_SSL_CA environment variable
+    if ssl_ca_env and os.path.exists(ssl_ca_env):
+        return ssl_ca_env
+
+    # Check Render Secret File location
+    render_secret_path = "/etc/secrets/ca.pem"
+    if os.path.exists(render_secret_path):
+        return render_secret_path
+
+    # Check project folder
+    project_ca_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ca.pem")
+    if os.path.exists(project_ca_path):
+        return project_ca_path
+
+    # Local fallback for existing Windows development setup
+    local_fallback = "C:/Users/TECQNIO/Downloads/ca.pem"
+    if os.path.exists(local_fallback):
+        return local_fallback
+
+    return ssl_ca_env or local_fallback
+
+
+def get_db_connection():
     connection = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="root",
-        database="gudibanda_kalyana"
+        host="gudibanda-mysql-gudibanda.f.aivencloud.com",
+        port=26828,
+        user="avnadmin",
+        password=os.getenv("AIVEN_DB_PASSWORD"),
+        database="gudibanda_kalyana",
+        ssl_ca=get_ssl_ca_path()
     )
 
     return connection
 
+# ==========================================
+# HOME
+# ==========================================
 
 # ==========================================
 # HOME
@@ -35,7 +87,22 @@ def home():
     if "user_id" not in session:
         return redirect("/login")
 
-    return render_template("index.html")
+    # ==========================================
+    # CHECK DATABASE STATUS
+    # ==========================================
+
+    try:
+        connection = get_db_connection()
+        connection.close()
+        db_status = True
+
+    except Exception:
+        db_status = False
+
+    return render_template(
+        "index.html",
+        db_status=db_status
+    )
 
 # ==========================================
 # AVAILABILITY PAGE

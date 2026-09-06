@@ -176,6 +176,19 @@
 
     </section>
 
+    <!-- neww -->
+     <div class="database-status {% if not db_status %}disconnected{% endif %}">
+
+    <span class="status-dot"></span>
+
+    {% if db_status %}
+        <span>Database Connected ✅</span>
+    {% else %}
+        <span>Database Disconnected ❌</span>
+    {% endif %}
+
+</div>
+
 
     <!-- CALL TO ACTION -->
     <section class="cta">
