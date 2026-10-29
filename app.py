@@ -7,7 +7,7 @@ from datetime import date
 
 app = Flask(__name__)
 
-app.secret_key = "gudibanda-secret-key"
+app.secret_key = "gudibanda-secret-key" 
 
 
 # ==========================================
